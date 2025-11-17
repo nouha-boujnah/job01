@@ -1,0 +1,9 @@
+import hashlib
+import string
+def mot_de_passe_valide(password):
+    has_lower = any (c.islower()for c in password)
+    has_digit = any(c.isdigit() for c in password)
+    special_characters = "!@#$%^&*"
+    has_special = any(c in special_characters for c in password)
+    is_long_enough = len(password) >= 8
+    return all([has_upper, has_lower, has_digit, has_special, is_long_enough])
